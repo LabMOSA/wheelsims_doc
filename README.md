@@ -27,6 +27,7 @@ This guide is a work in progress and some sections may be out of date.
     - 🔴 Developing games
 
 - 🔴 Adding active objects to an environment
+    - 🟡 [Overview of the traffic light, pedestrian and car system](moving_objects.md)
     - 🔴 Pedestrians
     - 🔴 Cars
     - 🔴 Developing new active objects
