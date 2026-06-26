@@ -13,7 +13,7 @@ You can get the git URL of any project by going on its GitHub repository and by 
 Here, the git URL is
 
 ```
-https://github.com/WheelSims/wheelsims.git
+https://github.com/LabMOSA/wheelsims.git
 ```
 
 

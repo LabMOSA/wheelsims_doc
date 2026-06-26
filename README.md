@@ -28,6 +28,7 @@ This guide is a work in progress and some sections may be out of date.
 
 - 🔴 Adding active objects to an environment
     - 🟡 [Humans](adding_humans.md)
+    - 🟡 [Overview of the traffic light, pedestrian and car system](moving_objects.md)
     - 🔴 Cars
     - 🔴 Developing new active objects
 
