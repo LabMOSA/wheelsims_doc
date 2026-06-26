@@ -27,7 +27,7 @@ This guide is a work in progress and some sections may be out of date.
     - 🔴 Developing games
 
 - 🔴 Adding active objects to an environment
-    - 🔴 Pedestrians
+    - 🟡 [Humans](adding_humans.md)
     - 🔴 Cars
     - 🔴 Developing new active objects
 
