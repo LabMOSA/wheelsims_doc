@@ -24,13 +24,13 @@ This guide is a work in progress and some sections may be out of date.
     - 🟢 [Developing new static objects](developing_new_static_objects.md)
     - 🟢 [Developing new environments](developing_new_environments.md)
     - 🟢 [Developing new playable scenes](developing_new_playable_scenes.md)
-    - 🔴 Developing games
 
 - 🔴 Adding active objects to an environment
     - 🟡 [Humans](adding_humans.md)
     - 🟡 [Overview of the traffic light, pedestrian and car system](moving_objects.md)
     - 🔴 Cars
     - 🔴 Developing new active objects
+    - 🔴 Developing games
 
 - 🔴 Adding elements to specific games
     - 🔴 [obstacle_race](obstacle_race.md)

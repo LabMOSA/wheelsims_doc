@@ -1,89 +1,124 @@
 # Developing new terrains
 
-A terrain is a scene that contains (only) the ground and walls. The following guide uses the `irglm_4th_floor` terrain as an example.
+A terrain is a scene that contains the ground and walls. It includes collision shapes so that the player stays on the ground surface, and navigation paths so that NPCs can spawn and go around.
+
+Developing a new terrain is always the first step in designing a new playable scene. In this guide, we will develop a very simple terrain that models a road, a widewalk, some grass and a facade.
 
 ## Designing the terrain in Blender
 
-Before creating a new terrain, we create these folders:
-- `wheelsims/art_source/terrain/irglm` that will contain the source Blender files for terrains related to the IRGLM;
-- `wheelsims/src/terrain/irglm` that will contain the final terrain scenes used in Godot;
-- `wheelsims/src/terrain/irglm/fbx` that will contain the exported Blender files;
-- `wheelsims/src/terrain/irglm/textures` that will contain the jpg/png files used as textures.
+### Preparing folders
 
-We remind that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](conventions.md).
+Before creating a new terrain, create these folders:
+- `wheelsims/art_source/terrain/demo` that will contain the source Blender files for our terrain;
+- `wheelsims/src/terrain/demo` that will contain the final terrain scenes used in Godot;
+- `wheelsims/src/terrain/demo/fbx` that will contain the exported Blender files;
+- `wheelsims/src/terrain/demo/textures` that will contain the jpg/png files used as textures for our terrain.
 
-Here is an example of the creation of the `irglm_4th_floor` terrain in Blender. All units are in meters.
-
-![](images/developing_new_terrains_blender.png)
+Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](conventions.md).
 
 
-Although the file is saved in the `art_source` folder as `wheelsims/art_source/terrain/irglm/irglm_4th_floor_terrain.blend`, the textures must be saved in the `src` folder so that they are imported by Godot. Here we have three textures:
-- `wheelsims/src/terrain/irglm/textures/irglm_red_tile.jpg`
-- `wheelsims/src/terrain/irglm/textures/irglm_blue_tile.jpg`
-- `wheelsims/src/terrain/irglm/textures/irglm_standard_tile.jpg`
+### Creating the base geometry
 
-### Ground and Walls
+In Blender, create a basic scene like this one:
 
-In this simple example, we have two separate meshes that we called `ground` and `walls`. It is important to keep the ground and walls separated because once imported into Godot, they will have different behaviours: grounds will be considered as surfaces, and walls will be considered as obstacles.
+![](images/developing_new_terrains_blender_base_geometry.png)
 
-We can have more meshes that those two; however, having too meshes in the Blender file will add complexity once imported into Godot, and therefore it is advised to keep the number of meshes to the minimum.
+This scene has:
+- two planes for the grass: one will contain a navigation shape for NPCs and not the other, to prevent NPCs to approach or penetrate the building;
+- one plane for the road: note that it is lower than the grass planes;
+- one mesh for the sidewalk that consists of one horizontal plane bordered by two planes;
+- one cube for the building.
+
+
+### Deforming to account for terrain elevation
+
+To make things a little bit more interesting, we will deform the ground planes and the sidewalk to make a small hill. First add more precision to the meshes so that they can deform: split it in squares of about 1 meter-squared. Note that for large scenes, a resolution of 1 meter-squared may be much too detailed. Such detailed resolutions should be reserved for the few areas with small hills and drops.
+
+![](images/developing_new_terrains_blender_deforming1.png)
+
+Add a lattice object around the scene and increase its resolution a bit (here we set it to 5x5). We use the lattice to create elevation without affecting the original meshes.
+
+![](images/developing_new_terrains_blender_deforming2.png)
+
+For every ground plane (thus excluding the building block), create a Lattice Deform modifier and select the lattice you just created as the source.
+
+![](images/developing_new_terrains_blender_deforming3.png)
+
+Edit the lattice and raise the middle point with proportional editing in smooth mode to create the desired hill.
+
+![](images/developing_new_terrains_blender_deforming4.png)
+
+### Applying temporary materials
+
+Create plain colour temporary materials for now. We will add texture later when we know that everything works well.
+
+![](images/developing_new_terrains_blender_materials.png)
 
 ### Exporting to FBX
 
-Once the terrain is completed in Blender, we use File → Export → FBX, we select these options, and we save as `wheelsims/src/terrain/irglm/irglm_4th_floor_terrain.fbx`. From this point, the terrain can be imported into Godot.
+Before exporting, select every mesh and apply scale to it (CTRL+A). Otherwise you may have scaling issues later when creating collision shapes and navigation meshes.
 
-![](images/developing_new_terrains_export_to_fbx.png)
+![](images/developing_new_terrains_blender_apply_scale.png)
+
+Once the terrain is completed in Blender, use File → Export → FBX, select the default options but click `Apply Transforms`, and save as `wheelsims/src/terrain/demo/demo_terrain.fbx`. From this point, the terrain can be imported into Godot.
+![](images/developing_new_terrains_blender_export_fbx.png)
 
 
 ## Creating the terrain scene in Godot
 
-Although we could use the FBX file we just created directly in any scene, we will add an additional layer between the terrain scene (.tscn) used everywhere, and its source geometry (.fbx). This will allow us to add required collision shape to the terrain later.
+In Godot, create a new 3D scene, and drag-and-drop the `demo_terrain.fbx` file you just created, and rename the base node `DemoTerrain`.
 
-In Godot, we close all scenes and we create a new 3D Scene:
+![](images/developing_new_terrains_godot_import_fbx.png)
 
-![](images/developing_new_terrains_create_3d_scene.png)
+### Creating the collision surfaces
 
-Then, from the FileSystem view, we drag and drop the `irglm_4th_floor_terrain.fbx` file onto the root Node3D that we just created.
+Right-click on `demo_terrain` in the scene arborescence and select `Editable children`. This reveals the different meshes you created in Blender.
 
-![](images/developing_new_terrains_fbx_to_scene.png)
+#### Ground surfaces
 
-We then rename the main node to the same name, and save it in `wheelsims/terrain/irglm`, again with the same name (`irglm_4th_floor_terrain.tscn`).
+For every ground surface, select `Mesh` → `Create Collision Shape...`, and select `Static Body Child` and `Trimesh` as options. 
 
-![](images/developing_new_terrains_new_scene.png)
-
-From now on, we can drag the new `irglm_4th_floor_terrain.tscn` into a scene to use the terrain we just created.
-
-![](images/developing_new_terrains_tscn_done.png)
+![](images/developing_new_terrains_godot_ground_surfaces1.png)
 
 
-## Setting the collision shape
+Then drag the `surface.gd` script to each StaticBody3D to define these collision shapes as surfaces (defined by a rolling resistance) and not walls.
 
-Although we imported the ground and walls correctly, there is still no colliders associated to it, and therefore we would pass through the ground and walls.
+![](images/developing_new_terrains_godot_ground_surfaces2.png)
 
-To add the colliders, we first right-click on the FBX instance, and we select "Editable Children":
+#### Walls
 
-![](images/developing_new_terrains_editable_children.png)
+Do the same for the building, but this time without dragging the `surface.gd` script.
 
-which reveals the different meshes:
+![](images/developing_new_terrains_godot_walls.png)
 
-![](images/developing_new_terrains_editable_children2.png)
+### Creating the navigation meshes
 
-For each mesh, we will create a collision shape. First we select the mesh, then we select "Mesh → Create Collision Shape", and we select "Static Body Child" and "Trimesh".
+For every ground shape that we want to be navigable by NPCs, create a navigation mesh.
 
-![](images/developing_new_terrains_create_collision_shape.png)
+![](images/developing_new_terrains_godot_navigation_meshes1.png)
 
-![](images/developing_new_terrains_create_collision_shape_options.png)
 
-Now, each mesh has an associated collision shape:
+![](images/developing_new_terrains_godot_navigation_meshes2.png)
 
-![](images/developing_new_terrains_collision_shape.png)
+### Storing the collision shapes and navigation meshes outside the imported FBX
 
-By default, each collision shape is considered as an obstacle. We need to specify that the ground is not an obstacle, but a surface. To this effect, we drag the `surface.gd` script from the `wheelsims/terrain` folder to the StaticBody3D object of the ground.
+The terrain we created in Blender is very basic and will probably go several improvements over the time. To avoid conflicts when we will reload it again, move the nodes you created outside the `demo_terrain` node. For clarity, create 3D nodes for every item of the FBX, so that everything is still well organized.
 
-![](images/developing_new_terrains_surface_script.png)
+![](images/developing_new_terrains_godot_storing_shapes_outside.png)
 
-We can now control the rolling resistance (and soon the vibration parameters) of this surface from the inspector:
+Uncheck `Editable Children` in the original FBX. From now on, we have all the required collision shapes and navigation paths for the terrain, and we can still add visual details to it without changing the behaviour of the game.
 
-![](images/developing_new_terrains_rolling_resistance.png)
+![](images/developing_new_terrains_godot_finalizing.png)
 
-The terrain is now ready to be included in any environment.
+Now save this scene as `demo_terrain.tscn`. This is the scene that will be included later when designing environments.
+
+
+## Testing the terrain in Godot
+
+Create a new 3D scene, add the demo scene you just created, the player, some lighting, and the NPC generator.
+
+![](images/developing_new_terrains_godot_testing.png)
+
+If you run this test scene, you should not pass through the ground, you should not be able to penetrate the building, and there should be NPCs everywhere that your allowed it.
+
+![](images/developing_new_terrains_godot_testing_result.png)
