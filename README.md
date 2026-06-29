@@ -5,7 +5,7 @@ The WheelSims project is an initiative led by Pr. Félix Chénier and funded by 
 This project aims to develop virtual-reality environments and technologies for wheelchair propulsion using a user-centric and open-source approach. The objective is to facilitate technology transfers between research laboratories and from research to clinics.
 
 ```{warning}
-This guide is a work in progress and some sections may be out of date.
+This guide is a work in progress, as is the whole project.
 ``` 
 
 
@@ -18,14 +18,14 @@ This guide is a work in progress and some sections may be out of date.
     - 🟢 [File and code conventions](conventions.md)
     - 🔴 File structure
 
-- 🔴 Developing new static scenes
-    - 🟢 [WheelSims node model](node_model.md)
-    - 🟢 [Developing new terrains](developing_new_terrains.md)
-    - 🟢 [Developing new static objects](developing_new_static_objects.md)
-    - 🟢 [Developing new environments](developing_new_environments.md)
-    - 🟢 [Developing new playable scenes](developing_new_playable_scenes.md)
+- Developing new static scenes
+    - [WheelSims node model](node_model.md)
+    - [Developing new terrains](developing_new_terrains.md)
+    - [Developing new static objects](developing_new_static_objects.md)
+    - [Developing new environments](developing_new_maps.md)
+    - [Developing new playable scenes](developing_new_playable_scenes.md)
 
-- 🔴 Adding active objects to an environment
+- 🔴 Adding active objects to a scene
     - 🟡 [Humans](adding_humans.md)
     - 🟡 [Overview of the traffic light, pedestrian and car system](moving_objects.md)
     - 🔴 Cars

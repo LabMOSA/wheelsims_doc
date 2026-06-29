@@ -7,12 +7,18 @@ For a scene to be selectable and playable in the user interface, it needs to:
 
 ## Creating the playable scene in Godot
 
-We close all scenes and we create a new 3D Scene:
+Create a new empty 3D scene, and drag to it:
+1. A map (here, the map we just did [previously](developing_new_maps.md);
+2. The player;
+3. If needed, a pedestrian generator.
 
-![](images/developing_new_terrains_create_3d_scene.png)
+Save it as `res://playable_scene/demo.tscn`. It should now be available as any other scene in the main user interface. Or you can run it using the "Run Current Scene" option.
 
-Then, we drag both the player and environment we want to navigate into the new 3D Scene. We give it a short name (no need to add `scene` at the end as with `terrain` or `environment`, since this is the entry point in the user interface. Here, we create a playable scene from the `irglm_4th_floor_environment.tscn` that we build [previously](developing_new_environments.md), and we save it as `res://playable_scenes/irglm_4th_floor.tscn`.
+When running the scene, we should be able to navigate it and see NPCs wandering in it.
 
-From this point, we can launch the user interface and the scene will appear with every other available scenes in the scene list. However it won't have a thumbnail yet. To generate this thumbnail, we navigate to a visually interesting point of view, make a screenshot and save it with the same name, as `res://playable_scenes/irglm_4th_floor.png`.
+![](images/developing_new_playable_scenes.png)
 
-The scene is now playable and fully part of the user interface.
+## Add a thumbnail to it
+
+Take a snapshot of the scene and save it as `res://playable_scenes/demo.png`. Now, we have a nice thumbnail in the scene selection menu.
+
