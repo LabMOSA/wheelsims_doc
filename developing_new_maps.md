@@ -4,7 +4,7 @@ A map is the combination of a terrain (ground and walls geometry) and of differe
 
 ## Creating the map in Godot
 
-In Godot, create a new 3D scene, and drag-and-drop the `demo_terrain.fbx` file you just created. Name it "Demo", and save it as `res://maps/demo/demo.tscn`.
+In Godot, create a new 3D scene, and drag-and-drop the `demo.gltf` file you just created. Name it "Demo", and save it as `res://maps/demo/demo.tscn`.
 
 ![](images/developing_new_terrains_godot_import_fbx.png)
 

@@ -4,16 +4,15 @@ A terrain is an FBX file that contains the ground and walls, and is generally de
 
 ## Preparing folders
 
-Before creating a new terrain, create these folders:
-- `wheelsims/art_source/terrain/demo` that will contain the source Blender file for our terrain;
-- `wheelsims/src/maps/demo/fbx` that will contain the exported Blender files;
-- `wheelsims/src/maps/demo/textures` that will contain the jpg/png files used as textures for our terrain.
+Before creating a new terrain, create this folder in the `wheelsims_artwork` repository:
+- `terrain/demo` that will contain the source Blender file for our terrain;
+- `terrain/demo/textures` that will contain the jpg/png files used as textures for our terrain.
 
 Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](conventions.md).
 
 ## Creating the base geometry
 
-Create a basic scene like this one:
+Create a basic scene like this one, and save it as `terrain/demo/demo.blend`.
 
 ![](images/developing_new_terrains_blender_base_geometry.png)
 
@@ -55,13 +54,18 @@ Create plain colour temporary materials for now. We will add texture later when 
 
 ![](images/deveoping_new_terrains_materials.png)
 
-## Exporting to FBX
+## Exporting to glTF
 
+Once the terrain is completed in Blender, use File → Export → glTF 2.0 (.glb/.gltf), and apply the following options (important):
+- In format, select glTF separate (.gltf + .bin + textures). This separates the textures from the mesh information (.bin) which is more git-friendly.
+- In Textures, write "textures". This is the subfolder where the textures will be exported.
+- Click "Remember Export Settings" to do this once with the current Blender file.
+- In Mesh, select "Apply Modifiers", unless you have no modifiers in your current file (which is unlikely since auto-smooth shading is a modifier).
 
-Once the terrain is completed in Blender, use File → Export → FBX, select the default options but click `Apply Transforms`, and save as `wheelsims/src/maps/demo/fbx/demo_terrain.fbx`. From this point, the terrain can be imported into Godot.
+Save the file in the Godot project as `res://src/maps/demo/gltf/demo.gltf`. The terrain will then be imported by Godot.
 
 
 ![](images/deveoping_new_terrains_export.png)
 
 
-You can now continue to [](developing_new_maps.md) to work with this new terrain in Godot.
+Now continue to [](developing_new_maps.md) to work with this new terrain in Godot.

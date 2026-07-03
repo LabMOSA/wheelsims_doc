@@ -21,9 +21,10 @@ This guide is a work in progress, as is the whole project.
 - Developing new static scenes
     - [WheelSims node model](node_model.md)
     - [Developing new terrains](developing_new_terrains.md)
-    - [Developing new static objects](developing_new_static_objects.md)
-    - [Developing new environments](developing_new_maps.md)
+    - [Developing new maps](developing_new_maps.md)
     - [Developing new playable scenes](developing_new_playable_scenes.md)
+    - [Developing new static objects](developing_new_static_objects.md)
+
 
 - 🔴 Adding active objects to a scene
     - 🟡 [Humans](adding_humans.md)
