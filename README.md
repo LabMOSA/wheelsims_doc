@@ -9,6 +9,7 @@ This guide is a work in progress, as is the whole project.
 ``` 
 
 
+- [WheelSims Big Picture Flowchart](wheelsims_big_picture_flowchart)
 - 🔴 Running WheelSims
     - 🔴 Installing Godot
     - 🔴 Cloning the main `wheelsims` repository
