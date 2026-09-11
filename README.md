@@ -9,14 +9,14 @@ This guide is a work in progress, as is the whole project.
 ``` 
 
 
-- [WheelSims Big Picture Flowchart](wheelsims_big_picture_flowchart.md)
+- [WheelSims Big Picture Flowchart](docs/1.%20Introduction/wheelsims_big_picture_flowchart.md)
 - 🔴 Running WheelSims
     - 🔴 Installing Godot
     - 🔴 Cloning the main `wheelsims` repository
     - 🔴 Starting the user interface
 - 🔴 Developing WheelSims
-    - [🟢 Cloning the main `wheelsims` repository](developing_wheelsims_clone_fork.md)
-    - 🟢 [File and code conventions](conventions.md)
+    - [🟢 Cloning the main `wheelsims` repository](docs/2.%20Software/2.%20Developing%20WheelSims/1.%20developing_wheelsims_clone_fork.md)
+    - 🟢 [File and code conventions](docs/2.%20Software/2.%20Developing%20WheelSims/2.%20conventions.md)
     - 🔴 File structure
 
 - Developing new static scenes

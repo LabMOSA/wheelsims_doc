@@ -13,7 +13,7 @@ First create these folders in the `wheelsims_artwork` repository:
 and these folders in the `wheelsims` repository:
 - `src/objects/sports/gltf` that will contain the exported sport-related objects.
 
-Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](conventions.md).
+Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](docs/2.%20Software/2.%20Developing%20WheelSims/2.%20conventions.md).
 
 In Blender, create a similar object and save it as `objects/sports/cone.blend`. All units are in meters. For optimization, try to limit the number of polygons in an object.
 
