@@ -1,3 +1,7 @@
+---
+title: Cloning/Forking WheelSims or Development
+---
+
 # Cloning  `wheelsims`  for development
 
 If you are part of the lab, you should have direct access to the main `wheelsims` repository. If you are an outside collaborator, then first fork the repository, and follow these steps to clone your fork instead of cloning the main `wheelsims` repository.
