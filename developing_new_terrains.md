@@ -8,7 +8,7 @@ Before creating a new terrain, create this folder in the `wheelsims_artwork` rep
 - `terrain/demo` that will contain the source Blender file for our terrain;
 - `terrain/demo/textures` that will contain the jpg/png files used as textures for our terrain.
 
-Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](docs/2.%20Software/2.%20Developing%20WheelSims/2.%20conventions.md).
+Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](docs/2_Software/2_Developing_WheelSims/2_conventions.md).
 
 ## Creating the base geometry
 
