@@ -19,3 +19,9 @@ awesome_nav:
   enabled: true
   root: docs
   nav_filename: .nav.yml
+
+defaults:
+  - scope:
+      path: "docs"
+    values:
+      layout: default
