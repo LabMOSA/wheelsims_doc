@@ -1,10 +1,10 @@
-# Obstacle Race
+# Obstacle Race (in progress)
 
 ## Parameters of an obstacle race
 ### Race data
 The obstacle race is organized with different race levels. Every race level has parameters defined in a race_data object: 
 
-![243](images/obstacle_race_race_data.png)
+![243](obstacle_race_race_data.png)
 *Screenshot of the inspector of obstacle_race_generator node*
 
 *Every length is in meters*
@@ -33,7 +33,7 @@ These parameters can be edited in the inspector of the **obstacle_race_generator
 
 In the same node (obstacle_race_generator), you need to fill the object fields to generate the objects. They are 3 lists:
 
-![302](images/obstacle_race_objects_inspector.png)
+![302](obstacle_race_objects_inspector.png)
 
 - ***Obstacle Infos***
 - ***Transparent Wall Infos***
@@ -41,7 +41,7 @@ In the same node (obstacle_race_generator), you need to fill the object fields t
 
 These are resource objects called ObjectInfo. They are not the scenes of the objects directly. They contain different fields:
 
-![324](images/obstacle_race_object_info_inspector.png)
+![324](obstacle_race_object_info_inspector.png)
 
 
 - _**Scene**_: References the scene required to instantiate the object.

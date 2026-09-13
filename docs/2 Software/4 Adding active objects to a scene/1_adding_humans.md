@@ -1,3 +1,5 @@
+# Adding Humans
+
 ## Adding new human bodies to the available humans
 
 Currently, all our humans come from [Mixamo](www.mixamo.com).
@@ -6,16 +8,16 @@ Currently, all our humans come from [Mixamo](www.mixamo.com).
 
 Go to [Mixamo](www.mixamo.com), select a character and download it without adding an animation.
 
-![](images/adding_human_download_body.png)
+![](adding_human_download_body.png)
 
 ### Editing in Blender
 
 In Blender, start a new file and delete the cube, light and camera. Then import the FBX you just downloaded.
 
-![](images/adding_human_importing_blender.png)
+![](adding_human_importing_blender.png)
 Open the Image pane, and for every image in the file (including normal maps, diffuse maps, etc.), resize it to 512x512 pixels. If you don't, the final file will be way too large and may not even by allowed on GitHub.
 
-![](images/adding_humans_resizing_textures.png)
+![](adding_humans_resizing_textures.png)
 
 Export as glTF (.gdb) in `src/objects/humans` with the other human bodies.
 
@@ -27,19 +29,19 @@ You can now delete the original FBX file from Mixamo.
 
 In Godot, double-click the .gdb file you just added. We need to remap the skeleton to a new generic skeleton so that every animation fit this new body. First, select Skeleton3D, then create a new BoneMap in the Retarget section.
 
-![](images/adding_human_bodies_skeleton1.png)
+![](adding_human_bodies_skeleton1.png)
 
 Click on the BoneMap you just added, and select a SkeletonProfileHumanoid in Profile.
 
-![](images/adding_human_body_skeleton2.png)
+![](adding_human_body_skeleton2.png)
 
 Normally, Godot should have mapped bone from the glTF to the (simpler) skeleton you just created. For instance, here we check that the mixamorig7_RightArm bone will be renamed RightUpperArm in the imported skeleton.
 
-![](images/adding_humans_skeleton2.png)
+![](adding_humans_skeleton2.png)
 
 Ensure that these options are selected in the Bone Renamer section:
 
-![](images/adding_human_body_skeleton3.png)
+![](adding_human_body_skeleton3.png)
 
 Then click Reimport.
 
@@ -53,7 +55,7 @@ There's a bug somewhere in the conversion of glossiness/roughness. The glossines
 
 In the new `.tscn` you created, select the AnimationPlayer and select "Animation/Manage Animations...".
 
-![](images/adding_human_animation_to_library.png)
+![](adding_human_animation_to_library.png)
 
 Click on the "Load Library" button and select `human_animation_librari.tres`, in the human animations folder. All animations are then available for this new body.
 
@@ -67,7 +69,7 @@ Still in the new `.tscn` you created, add the `human_animator.gd` script to the 
 
 Go to [Mixamo](www.mixamo.com), select a generic character, then go to the Animations tab and select an animation. Download it without skin.
 
-![](images/adding_human_animation_download.png)
+![](adding_human_animation_download.png)
 
 ### Importing into Godot
 
@@ -85,11 +87,11 @@ Now delete the animation FBX you added in the first step, we don't need it anymo
 
 Open any human `.tscn` file, then select its AnimationPlayer, and select "Animation/Manage Animations...".
 
-![](images/adding_human_animation_to_library.png)
+![](adding_human_animation_to_library.png)
 
 Select the folder icon to load an animation from file and add to the library.
 
-![](images/add_human_animation_to_library2.png)
+![](add_human_animation_to_library2.png)
 
 Select the `.tres` animation you just created, then save the HumanAnimations library using its Save icon. The new animation is now available for every human.
 

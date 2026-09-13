@@ -1,4 +1,4 @@
-# 🚦 Traffic Light System – Overview & Implementation Guide
+# Overview of the Traffic Light System (in progress)
 
 ## 🎨 Visual Components
 ### ➤ Light Materials

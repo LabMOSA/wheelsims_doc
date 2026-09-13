@@ -12,7 +12,7 @@ We recommend using a desktop git app to ease the development. Here, we show how 
 
 You can get the git URL of any project by going on its GitHub repository and by clicking on the green `Code` button:
 
-![](images/developing_wheelsims_clone.png)
+![](developing_wheelsims_clone.png)
 
 Here, the git URL is
 
@@ -23,7 +23,7 @@ https://github.com/LabMOSA/wheelsims.git
 
 ## In SourceTree, clone a repository from URL, and enter this URL and the local folder where you want to clone
 
-![](images/developing_wheelsims_clone_sourcetree.png)
+![](developing_wheelsims_clone_sourcetree.png)
 
 
 Wait for the clone to complete. This is a pretty large repository and it may take some time.
@@ -32,7 +32,7 @@ Wait for the clone to complete. This is a pretty large repository and it may tak
 
 To add clarity to the sometimes complex git tree, we prepend each commit with the branch name automatically. To do this, open a git-enabled terminal in the local repository's folder. In SourceTree, launch the Terminal:
 
-![](images/sourcetree_bar.png)
+![](sourcetree_bar.png)
 
 In the terminal, enter:
 

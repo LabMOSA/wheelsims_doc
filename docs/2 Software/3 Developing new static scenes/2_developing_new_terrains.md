@@ -8,13 +8,13 @@ Before creating a new terrain, create this folder in the `wheelsims_artwork` rep
 - `terrain/demo` that will contain the source Blender file for our terrain;
 - `terrain/demo/textures` that will contain the jpg/png files used as textures for our terrain.
 
-Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](docs/2_Software/2_Developing_WheelSims/2_conventions.md).
+Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](docs/2%20Software/2%20Developing%20Wheelsims/2_conventions.md).
 
 ## Creating the base geometry
 
 Create a basic scene like this one, and save it as `terrain/demo/demo.blend`.
 
-![](images/developing_new_terrains_blender_base_geometry.png)
+![](developing_new_terrains_blender_base_geometry.png)
 
 This scene has:
 - two planes for the grass: one will contain a navigation shape for NPCs and not the other, to prevent NPCs from approaching the building;
@@ -28,31 +28,31 @@ To make things a little bit more interesting, we will deform the ground planes a
 
 *Note that for large scenes, a resolution of 2 meter-squared may be too detailed, and that duch detailed resolutions should be reserved for the few areas with small hills and drops.*
 
-![](images/deveoping_new_terrains_deform1.png)
+![](deveoping_new_terrains_deform1.png)
 
 Then select all materials, and apply their scale (CTRL+A, Apply Scale). This will prevent issues later when importing the FBX in Godot.
 
 Now select the ground planes (not the building), and add a lattice object to deform those planes. Here we set the resolution of the lattice to 5x5).
 
-![](images/deveoping_new_terrains_deform2.png)
+![](deveoping_new_terrains_deform2.png)
 
 
-![](images/deveoping_new_terrains_deform3.png)
+![](deveoping_new_terrains_deform3.png)
 
 
 Edit the lattice and raise the middle point with proportional editing in smooth mode to create the desired hill.
 
-![](images/deveoping_new_terrains_deform4.png)
+![](deveoping_new_terrains_deform4.png)
 
 Set the ground shading to auto-smooth.
 
-![](images/deveoping_new_terrains_deform5.png)
+![](deveoping_new_terrains_deform5.png)
 
 ## Applying temporary materials
 
 Create plain colour temporary materials for now. We will add texture later when we know that everything works well.
 
-![](images/deveoping_new_terrains_materials.png)
+![](deveoping_new_terrains_materials.png)
 
 ## Exporting to glTF
 
@@ -65,7 +65,7 @@ Once the terrain is completed in Blender, use File → Export → glTF 2.0 (.glb
 Save the file in the Godot project as `res://src/maps/demo/gltf/demo.gltf`. The terrain will then be imported by Godot.
 
 
-![](images/deveoping_new_terrains_export.png)
+![](deveoping_new_terrains_export.png)
 
 
-Now continue to [](developing_new_maps.md) to work with this new terrain in Godot.
+Now continue to [](3_developing_new_maps.md) to work with this new terrain in Godot.

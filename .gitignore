@@ -1,3 +1,6 @@
 workspace.json
 workspaces.json
 workspace
+
+# MyST build outputs
+_build

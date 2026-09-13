@@ -51,9 +51,9 @@ map --> object_n[[object_n]]
 
 ```
 
-- The [terrain](developing_new_terrains.md) node represents the surface and walls of the map. For instance, roads, alleys, building facades. In other words, where the player go. It is generally a single FBX file and is designed in Blender. It does not include objects such as trees, benches or other stuff.
-- The [map](developing_new_maps.md) node combines a terrain with different [static objects](developing_new_static_objects.md) or animated objects (e.g., trees, cars, street lights). It also defines the navigation regions for the NPCs, and the static bodies for the ground surfaces and walls.
-- The [playable_scene](developing_new_playable_scenes.md) node adds the `player` to the map. It can also integrate game elements. A `playable_scene` can therefore be ran by itself so that we can test the scene or game separately. Examples include:
+- The [terrain](2_developing_new_terrains.md) node represents the surface and walls of the map. For instance, roads, alleys, building facades. In other words, where the player go. It is generally a single FBX file and is designed in Blender. It does not include objects such as trees, benches or other stuff.
+- The [map](3_developing_new_maps.md) node combines a terrain with different [static objects](5_developing_new_static_objects.md) or animated objects (e.g., trees, cars, street lights). It also defines the navigation regions for the NPCs, and the static bodies for the ground surfaces and walls.
+- The [playable_scene](4_developing_new_playable_scenes.md) node adds the `player` to the map. It can also integrate game elements. A `playable_scene` can therefore be ran by itself so that we can test the scene or game separately. Examples include:
     - `playable_scenes/park.tscn`
     - `playable_scenes/street_corner.tscn`
     - `playable_scenes/obstacle_race.tscn`

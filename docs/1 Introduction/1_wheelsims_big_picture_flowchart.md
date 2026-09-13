@@ -1,8 +1,7 @@
----
-title: Big Picture Flowchart
----
+# Big picture flowchart
 
 ```mermaid
+
 flowchart TD
 
 slrt["IURDPM Platform - Simulink Real-Time (wheelsims_haptics repository)"]
@@ -80,7 +79,6 @@ projectors_and_screens[Projectors and screens]
 screens --> |HDMI| projectors_and_screens
 
 subgraph python["Python (wheelsims_analysis repository)"]
-    direction TD
     style python fill:#afa
     python_python_bridge["bridge/dispatcher"]
     python_push_segmentation["push segmentation"]
@@ -101,3 +99,6 @@ d_box_system[D-Box System]
 devices_d_box --> |UDP| d_box_driver_app
 d_box_driver_app --> |USB| d_box_system
 ```
+
+Big picture flowchart
+
