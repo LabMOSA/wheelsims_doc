@@ -39,5 +39,5 @@ jobs:
         echo "$SCP_KEY" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         SSH_OPTS="-o StrictHostKeyChecking=accept-new"
-        rsync -a --delete-delay -e "ssh $SSH_OPTS -p $SCP_PORT" _build/html $SCP_USER@$SCP_HOST:/home/wheelsim/docs_build
+        rsync -a --delete-delay -e "ssh $SSH_OPTS -p $SCP_PORT" docs/_build/html $SCP_USER@$SCP_HOST:/home/wheelsim/docs_build
         
