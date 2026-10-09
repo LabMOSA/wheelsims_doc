@@ -131,7 +131,7 @@ site:
     folders: false
     style: _static/css/custom.css
     logo: _static/logo.png
-    logo_dark: _static/logo.png
+    logo_dark: _static/logo_dark.png
     favicon: favicon.ico
 #    internal_domains: kineticstoolkit.uqam.ca
   parts:

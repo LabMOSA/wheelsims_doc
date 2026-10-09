@@ -1,6 +1,6 @@
-# Developing new terrains in Blender
+# 🟢 Developing new terrains in Blender
 
-A terrain is an FBX file that contains the ground and walls, and is generally designed in Blender. Developing a new terrain is always the first step in designing a new playable scene. In this guide, we will develop a very simple terrain that models a road, a widewalk, some grass and a facade.
+A terrain is a GLTF file that contains the ground and walls, and is generally designed in Blender. Developing a new terrain is always the first step in designing a new playable scene. In this guide, we will develop a very simple terrain that models a road, a widewalk, some grass and a facade.
 
 ## Preparing folders
 
@@ -8,7 +8,7 @@ Before creating a new terrain, create this folder in the `wheelsims_artwork` rep
 - `terrain/demo` that will contain the source Blender file for our terrain;
 - `terrain/demo/textures` that will contain the jpg/png files used as textures for our terrain.
 
-Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](docs/2%20Software/2%20Developing%20Wheelsims/2_conventions.md).
+Remember that all folder and file names must be in `snake_case` (lower case with words separated by underscores) according to the [file name conventions](../3%20🟡%20Developing%20Wheelsims/2_conventions.md).
 
 ## Creating the base geometry
 

@@ -1,4 +1,4 @@
-# Obstacle Race (in progress)
+# 🟡 Obstacle Race
 
 ## Parameters of an obstacle race
 ### Race data

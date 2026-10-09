@@ -1,4 +1,4 @@
-# Overview of the Traffic Light System (in progress)
+# 🔴 Overview of the Traffic Light System
 
 ## 🎨 Visual Components
 ### ➤ Light Materials

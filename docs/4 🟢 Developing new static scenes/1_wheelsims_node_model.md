@@ -1,4 +1,4 @@
-# Wheelsims Node Model
+# 🟢 Wheelsims Node Model
 
 In the figure below, each node of this type:
 

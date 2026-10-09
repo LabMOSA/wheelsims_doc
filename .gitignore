@@ -4,3 +4,4 @@ workspace
 
 # MyST build outputs
 _build
+.obsidian

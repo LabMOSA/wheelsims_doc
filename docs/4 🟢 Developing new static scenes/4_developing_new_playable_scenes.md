@@ -1,4 +1,4 @@
-# Developing new playable scenes
+# 🟢 Developing new playable scenes
 
 For a scene to be selectable and playable in the user interface, it needs to:
 - Include the player object;
@@ -8,7 +8,7 @@ For a scene to be selectable and playable in the user interface, it needs to:
 ## Creating the playable scene in Godot
 
 Create a new empty 3D scene, and drag to it:
-1. A map (here, the map we just did [previously](docs/2%20Software/3%20Developing%20new%20static%20scenes/3_developing_new_maps.md);
+1. A map (here, the map we just did [previously](3_developing_new_maps.md);
 2. The player;
 3. If needed, a pedestrian generator.
 

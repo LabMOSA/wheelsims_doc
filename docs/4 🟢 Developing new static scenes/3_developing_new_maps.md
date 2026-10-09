@@ -1,6 +1,6 @@
-# Developing new maps
+# 🟢 Developing new maps
 
-A map is the combination of a terrain (ground and walls geometry) and of different objects such as lights, static bodies for collisions, navigation meshes for NPCs, and various static elements such as trees and benches. In this tutorial, we will create a map using the terrain we created [previously](docs/2%20Software/3%20Developing%20new%20static%20scenes/2_developing_new_terrains.md).
+A map is the combination of a terrain (ground and walls geometry) and of different objects such as lights, static bodies for collisions, navigation meshes for NPCs, and various static elements such as trees and benches. In this tutorial, we will create a map using the terrain we created [previously](2_developing_new_terrains.md).
 
 ## Creating the map in Godot
 
